@@ -1,12 +1,11 @@
-// javascripts/cart-panel-v2.js
+// cart-panel.js
 
-// 🛑 FULLY REBUILT AND ROBUST CART LOGIC (Self-Contained IIFE) 🛑
+// 🛑 CRITICAL FIX: The entire script is correctly wrapped in an IIFE.
 (function() {
   
   // ---- Cart State ----
   let cart = [];
 
-  // Load cart from localStorage
   const cartData = localStorage.getItem('cart');
   if (cartData) {
     try {
@@ -21,12 +20,85 @@
   }
   
   // --- Dependency Utility Functions ---
-  // Ensure the global functions required by renderCartItems are defined safely.
   const getSymbol = () => (typeof currency !== 'undefined' && currency.symbol) ? currency.symbol : '$';
   const convertPrice = (p) => (typeof window.convertPrice === 'function') ? window.convertPrice(p) : Number(p).toFixed(2);
 
 
-  // ---- Global Functions (Exposed to window) ----
+  // ---- New Feature Logic: State Synchronization ----
+  
+  function updateProductControls(productName) {
+      const cartItem = cart.find(item => item.name === productName);
+      const qty = cartItem ? cartItem.quantity : 0;
+      
+      // --- Update All Product Cards ---
+      document.querySelectorAll('.product-card').forEach(card => {
+          const cardName = card.querySelector('.scrolling-text')?.textContent;
+          if (cardName === productName) {
+              const cardQtyWrapper = card.querySelector('.product-qty-controls');
+              const cardAddBtn = card.querySelector('.product-cart-btn');
+              const cardQtyDisplay = card.querySelector('[data-qty-display]');
+
+              if (qty > 0) {
+                  if (cardQtyDisplay) cardQtyDisplay.textContent = qty;
+                  if (cardQtyWrapper) cardQtyWrapper.classList.remove('hidden');
+                  if (cardAddBtn) cardAddBtn.classList.add('hidden');
+              } else {
+                  if (cardQtyWrapper) cardQtyWrapper.classList.add('hidden');
+                  if (cardAddBtn) cardAddBtn.classList.remove('hidden');
+              }
+          }
+      });
+      
+      // --- Update Modal Controls (if visible) ---
+      const modalNameEl = document.getElementById('modal-product-name');
+      if (modalNameEl && modalNameEl.textContent === productName) {
+          const modalQtyWrapper = document.getElementById('modal-qty-controls');
+          const modalAddBtn = document.querySelector('.modal-add-cart');
+          
+          if (qty > 0) {
+              if (modalQtyWrapper) modalQtyWrapper.classList.remove('hidden');
+              if (modalAddBtn) modalAddBtn.classList.add('hidden');
+              if (modalQtyWrapper) modalQtyWrapper.querySelector('[data-modal-qty-display]').textContent = qty;
+          } else {
+              if (modalQtyWrapper) modalQtyWrapper.classList.add('hidden');
+              if (modalAddBtn) modalAddBtn.classList.remove('hidden');
+          }
+      }
+  }
+
+  // 🛑 NEW FUNCTION: Called on page load/product load to sync all items
+  window.syncAllProductControls = function() {
+      const names = new Set();
+      document.querySelectorAll('.product-card').forEach(card => {
+          const name = card.querySelector('.scrolling-text')?.textContent;
+          if (name) names.add(name);
+      });
+      names.forEach(name => updateProductControls(name));
+  };
+  
+  // 🛑 NEW FUNCTION: Handles + and - clicks from product cards/modal
+  window.modifyCartQuantity = function(productName, action) {
+      const existingItem = cart.find(item => item.name === productName);
+      if (!existingItem) return;
+
+      if (action === 'plus') {
+          existingItem.quantity++;
+      } else if (action === 'minus') {
+          existingItem.quantity--;
+      }
+
+      if (existingItem.quantity <= 0) {
+          const index = cart.indexOf(existingItem);
+          cart.splice(index, 1);
+      }
+      
+      window.renderCartItems();
+      saveCartToLocalStorage();
+      updateProductControls(productName); // Sync external controls
+  };
+
+
+  // ---- Global Expositions & Functions ----
   
   window.openCartPanel = function() {
     document.getElementById('cart-panel').classList.add('active');
@@ -48,6 +120,7 @@
     
     if (badge) {
       badge.textContent = count > 0 ? count : ''; 
+      
       if (count === 0) {
         badge.classList.remove('active');
       } else {
@@ -56,8 +129,7 @@
     }
   };
 
-  // 🛑 GLOBAL: Function to render the cart HTML (called by currency.js, checkout.js, etc.)
-  window.renderCartItems = function() {
+  window.renderCartItems = function() { 
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalEl = document.getElementById('cart-total-price');
     const cartEmptyEl = document.getElementById('cart-empty');
@@ -109,8 +181,9 @@
     window.updateCartBadge();
   };
 
-  // 🛑 GLOBAL: Function to add a product (called by modal.js and product-cards.js)
   window.addProductToCart = function({ img, name, price }) { 
+    const product = { img, name, price };
+    
     const existingItem = cart.find(item => item.name === name && item.img === img);
 
     if (existingItem) {
@@ -118,38 +191,29 @@
     } else {
       cart.push({ img, name, price, quantity: 1 });
     }
-
+    
     window.renderCartItems();
     saveCartToLocalStorage();
-
-    // Show feedback on product cards
-    document.querySelectorAll('.product-card').forEach(card => {
-      const cardName = card.querySelector('.scrolling-text')?.textContent;
-      const cardImg = card.querySelector('.product-img-wrapper img')?.src;
-      
-      if (cardName === name && cardImg === img) {
-        const cartBtn = card.querySelector('.product-cart-btn');
-        if (cartBtn) {
-          cartBtn.classList.add('added');
-          setTimeout(() => { cartBtn.classList.remove('added'); }, 1200);
-        }
-      }
-    });
+    
+    updateProductControls(name); 
   };
 
+
   // ---- DOMContentLoaded Wrapper for all listeners and initial calls ----
+  // 🛑 FIX: This is the primary DOMContentLoaded wrapper. No nesting!
   document.addEventListener("DOMContentLoaded", function() {
 
+    // --- DOM ELEMENT SETUP ---
     const cartOverlay = document.getElementById('cart-overlay');
     const cartCloseBtn = document.getElementById('cart-close-btn');
     const cartHeaderBtn = document.getElementById('cart-header-btn');
     const cartItemsContainer = document.getElementById('cart-items');
     const checkoutBtn = document.getElementById('cart-checkout-btn');
 
-    // Attach Open/Close Listeners
-    if (cartOverlay) cartOverlay.addEventListener('click', window.closeCartPanel);
-    if (cartCloseBtn) cartCloseBtn.addEventListener('click', window.closeCartPanel);
-    if (cartHeaderBtn) cartHeaderBtn.addEventListener('click', window.openCartPanel);
+    // --- Attach Open/Close Listeners ---
+    if (cartOverlay) cartOverlay.addEventListener('click', closeCartPanel);
+    if (cartCloseBtn) cartCloseBtn.addEventListener('click', closeCartPanel);
+    if (cartHeaderBtn) cartHeaderBtn.addEventListener('click', openCartPanel);
 
     // --- Handle quantity changes and removal ---
     if (cartItemsContainer) {
@@ -161,6 +225,7 @@
         if (isNaN(index) || index >= cart.length) return;
 
         let cartChanged = false;
+        const productName = cart[index].name;
 
         if (e.target.classList.contains('cart-qty-minus')) {
           cart[index].quantity--;
@@ -169,27 +234,23 @@
         } else if (e.target.classList.contains('cart-qty-plus')) {
           cart[index].quantity++;
           cartChanged = true;
-        } else if (
-          e.target.classList.contains('cart-remove-btn') ||
-          e.target.closest('.cart-remove-btn')
-        ) {
+        } else if (e.target.closest('.cart-remove-btn')) {
           cart.splice(index, 1);
           cartChanged = true;
         } 
         
-        // 🛑 FIX: Guaranteed re-render and save after any change
         if (cartChanged) {
-          window.renderCartItems(); 
+          window.renderCartItems();
           saveCartToLocalStorage();
+          updateProductControls(productName); 
         }
       });
     }
 
-    // --- Handle checkout button click ---
+    // --- Checkout Button ---
     if (checkoutBtn) {
       checkoutBtn.addEventListener('click', function () {
         if (cart.length > 0) {
-          // 🛑 FIX: Skip closeCartPanel() to guarantee redirect
           window.location.href = 'checkout.html';
         } else {
           alert("Your cart is empty!");
@@ -201,4 +262,5 @@
     window.updateCartBadge();
     window.renderCartItems(); 
   });
+// 🛑 CRITICAL FIX: The closing IIFE syntax.
 })();

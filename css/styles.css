@@ -19,3 +19,59 @@ html, body {
   padding: 0;
   overflow-x: hidden;
 }
+
+/* --- New Styles for In-Card Quantity Controls --- */
+
+/* Wrapper to hold the Add button OR the +/- controls */
+.product-controls-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* Set the width to match the size of the initial cart button */
+    height: 32px;
+}
+
+/* Base style for the quantity controls */
+.product-qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 80px; /* Wider to hold the buttons and span */
+    background: #ece1d7;
+    border-radius: 18px;
+    padding: 2px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+/* Quantity buttons inside the new control wrapper */
+.product-qty-controls .cart-qty-btn {
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 50%; /* Make them perfectly round */
+    background: #fff;
+    color: #1b1716;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.16s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Quantity display span */
+.product-qty-controls .cart-item-qty {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1b1716;
+}
+
+/* Visibility Control */
+.product-cart-btn.hidden,
+.product-qty-controls.hidden {
+    display: none !important;
+}

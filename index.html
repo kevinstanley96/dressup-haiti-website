@@ -162,10 +162,17 @@
         <span class="modal-product-old-price" id="modal-product-old-price"></span>
       </div>
     </div>
-    <div class="modal-actions">
-      <button class="modal-btn modal-buy-now">Buy Now</button>
-      <button class="modal-btn modal-add-cart">Add to Cart</button>
-    </div>
+    <div class="modal-actions" data-product-name="">
+  <button class="modal-btn modal-buy-now">Buy Now</button>
+  
+  <button class="modal-btn modal-add-cart">Add to Cart</button>
+
+  <div class="product-qty-controls state-qty hidden" id="modal-qty-controls">
+    <button class="cart-qty-btn cart-qty-minus">-</button>
+    <span class="cart-item-qty" data-modal-qty-display>0</span>
+    <button class="cart-qty-btn cart-qty-plus">+</button>
+  </div>
+</div>
   </div>
 </div>
 
