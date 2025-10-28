@@ -1,0 +1,81 @@
+.category-slider-section {
+  width: 100vw;
+  background: #e5d3c5;  /* Try a soft beige-pink, or your favorite color */
+  padding: 16px 0 10px 0;
+  overflow-x: auto;
+  transition: padding 0.25s cubic-bezier(.42,0,.58,1), background 0.2s;
+  margin-bottom: 15px;
+}
+
+/* When sliding, make the wrapper taller by increasing padding */
+.category-slider-section.sliding {
+  padding-top: 30px;
+  padding-bottom: 24px;
+}
+
+/* Slider Row */
+.category-slider {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 14px;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+}
+
+.category-btn {
+  font-family: 'League Spartan', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 9px 22px;
+  border: none;
+  border-radius: 0;
+  color: #000;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: initial;
+  min-width: max-content;
+  text-decoration: none;
+}
+
+/* Vertical line between tags */
+.category-btn:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: #e2d6c5;
+  opacity: 0.9;
+}
+
+.category-btn:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 600px) {
+  .category-slider-section {
+    padding: 12px 0 7px 0;
+  }
+  .category-slider-section.sliding {
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+  .category-slider {
+    padding: 0 7px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .category-slider::-webkit-scrollbar {
+    display: none;
+  }
+}

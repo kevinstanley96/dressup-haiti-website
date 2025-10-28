@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Front Lace Wigs | Dressup Haiti</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/menu-panel.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/category-slider.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/product-sections.css">
+  <link rel="stylesheet" href="css/search-panel.css">
+  <link rel="stylesheet" href="css/currency.css">
+  <link rel="stylesheet" href="css/cart-panel.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  
+  <header class="main-header">
+    <div class="header-left">
+        <img src="assets/icons/menu-icon.svg" alt="Menu" class="icon menu-icon" id="openMenuBtn">
+        <a href="index.html" class="site-name">DRESSUP HAITI</a>
+    </div>
+    <div class="header-right">
+        <img src="assets/icons/search.svg" alt="Search" class="icon" id="search-btn">
+    <div class="currency-wrapper">
+      <button id="currency-btn" class="currency-btn">
+        <img id="currency-icon" src="assets/icons/american-flag.svg" class="icon" alt="Currency">
+      </button>
+        <div id="currency-panel" class="currency-panel">
+            <div class="currency-panel-title">Select currency</div>
+            <ul id="currency-list" class="currency-list"></ul>
+        </div>
+    </div>
+    <button class="cart-header-btn" id="cart-header-btn">
+      <img src="assets/icons/cart-128.svg" class="icon" alt="Cart">
+      <span class="cart-badge" id="cart-badge">0</span>
+    </button>
+  </div>
+</header>
+
+<div id="search-panel-overlay" class="search-panel-overlay"></div>
+<div id="search-panel" class="search-panel">
+  <button id="search-close-btn" class="search-close-btn" aria-label="Close search">
+    <img src="assets/icons/close-icon.svg" alt="Close">
+  </button>
+  <div class="search-input-row">
+    <input id="search-input" type="text" placeholder="Search for wigs, styles, brands…" autocomplete="off">
+    <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search">
+      <img src="assets/icons/close-icon.svg" alt="Clear">
+    </button>
+  </div>
+  <div id="search-filters" class="search-filters"></div>
+  <div id="search-suggestions" class="search-suggestions"></div>
+  <div id="search-recent" class="search-recent"></div>
+</div>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="menu-panel" id="menuPanel">
+  <button class="close-btn" id="closeMenuBtn">
+    <img src="assets/icons/close-icon.svg" alt="Close" class="icon">
+  </button>
+  <nav class="menu-options">
+    <a href="#">About</a>
+    <a href="#">Shop All</a>
+    <a href="#">Categories</a>
+  </nav>
+  <div class="menu-socials">
+    <a href="https://instagram.com/dressupht_" aria-label="Instagram"><img src="assets/icons/instagram-filled.svg" alt="Instagram" class="icon"></a>
+    <a href="https://facebook.com/dressupht" aria-label="Facebook"><img src="assets/icons/facebook-filled.svg" alt="Facebook" class="icon"></a>
+    <a href="https://tiktok.com/@dressupht_?_t=ZS-8xUYr5BI4wh&_r=1" aria-label="TikTok"><img src="assets/icons/tiktok-128.svg" alt="TikTok" class="icon"></a>
+    <a href="https://wa.me/50947425510" aria-label="WhatsApp"><img src="assets/icons/whatsapp-128.svg" alt="WhatsApp" class="icon"></a>
+  </div>
+</aside>
+
+<section class="category-slider-section">
+  <div class="category-slider" id="categorySlider">
+    <a class="category-btn" href="front-lace.html">Front Lace</a>
+    <a class="category-btn" href="full-lace.html">Full Lace</a>
+    <a class="category-btn" href="lace-360.html">Lace 360</a>
+    <a class="category-btn" href="t-lace.html">T Lace</a>
+    <a class="category-btn" href="closure-44.html">Closure 4x4</a>
+    <a class="category-btn" href="closure-16.html">Closure 1x6</a>
+    <a class="category-btn" href="non-lace.html">Non Lace</a>
+    <a class="category-btn" href="pixie.html">Pixie</a>
+    <!-- Add more buttons here -->
+  </div>
+</section>
+  
+  <main>
+    <section class="product-section">
+      <div class="product-section-header">
+        <h2>FRONT LACE WIGS</h2>
+      </div>
+      <div class="product-list grid-list" id="frontLaceProducts">
+        <!-- Product cards will be injected here by JS -->
+      </div>
+    </section>
+  </main>
+  
+  <footer class="main-footer">
+  <div class="footer-top">
+    <div class="footer-logo">DRESSUP HAITI</div>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-socials">
+    <a href="https://instagram.com/dressupht_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="assets/icons/instagram-filled.svg" alt="Instagram"></a>
+    <a href="https://facebook.com/dressupht" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <img src="assets/icons/facebook-filled.svg" alt="Facebook"></a>
+    <a href="https://tiktok.com/@dressupht_?_t=ZS-8xUYr5BI4wh&_r=1" target="_blank" rel="noopener noreferrer" aria-label="Tiktok">
+      <img src="assets/icons/tiktok-128.svg" alt="TikTok"></a>
+    <a href="https://wa.me/50947425510" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <img src="assets/icons/whatsapp-128.svg" alt="WhatsApp"></a>
+  </div>
+  <div class="footer-developed-by">
+    <span>Developed by</span>
+    <img src="assets/icons/logo-bracket.svg" alt="Kevin Can Code Logo" class="footer-logo">
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2024 DRESSUP HAITI. All rights reserved.</span>
+  </div>
+
+</footer>
+
+  <div id="product-modal" class="modal-overlay" style="display:none;">
+  <div class="modal-content">
+    <div class="modal-product-img-wrapper">
+  <button class="circle-close-btn" aria-label="Close">
+    <img src="assets/icons/close-icon.svg" alt="Close">
+  </button>
+  <img id="modal-product-img" src="" alt="">
+</div>
+    <div class="modal-features" id="modal-product-features"></div>
+    <div class="modal-product-info">
+      <div class="modal-product-name" id="modal-product-name"></div>
+      <div class="modal-product-price-row">
+        <span class="modal-product-price" id="modal-product-price"></span>
+        <span class="modal-product-old-price" id="modal-product-old-price"></span>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn modal-buy-now">Buy Now</button>
+      <button class="modal-btn modal-add-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+ <!-- Cart Overlay/Panel -->
+<div id="cart-overlay" class="cart-overlay"></div>
+<aside id="cart-panel" class="cart-panel">
+  <div class="cart-panel-header">
+    <button class="cart-close-btn" id="cart-close-btn">
+      <img src="assets/icons/close-icon.svg" alt="Close cart" />
+    </button>
+    <span class="cart-panel-title">Your Cart</span>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <!-- Cart items go here -->
+    <div class="cart-empty" id="cart-empty">Your cart is empty.</div>
+  </div>
+  <div class="cart-panel-footer" id="cart-panel-footer">
+    <div class="cart-summary">
+      <span>Total:</span>
+      <span id="cart-total-price">$0.00</span>
+    </div>
+    <button class="cart-checkout-btn">Checkout</button>
+  </div>
+</aside>
+
+  <script src="javascripts/main.js"></script>
+  <script src="javascripts/currency.js"></script>
+  <script src="javascripts/cart-panel.js"></script>
+  <script src="javascripts/menu-panel.js"></script>
+  <script src="javascripts/category-slider.js"></script>
+  <script src="javascripts/footer.js"></script>
+  <script src="javascripts/product-cards.js"></script>
+  <script src="javascripts/search.js"></script>
+  <script src="javascripts/modal.js"></script>
+  
+  <script>
+    // Load only the products for this category
+    document.addEventListener("DOMContentLoaded", function() {
+      loadProducts('assets/json/front_lace_wigs.json', 'frontLaceProducts');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+  {
+    "name":"8\" lace frontal straight",
+    "price":65.0,
+    "oldPrice":75.0,
+    "img":"images\/wig.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name":"10\" lace frontal jerry curly",
+    "price":80.0,
+    "oldPrice":90.0,
+    "img":"images\/wig2.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name":"10\" closure 4x4 jerry curly",
+    "price":75.0,
+    "oldPrice":85.0,
+    "img":"images\/wig3.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name":"10\" headband jerry curly",
+    "price":65.0,
+    "oldPrice":75.0,
+    "img":"images\/wig4.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name":"10\" lace frontal straight",
+    "price":70.0,
+    "oldPrice":80.0,
+    "img":"images\/wig5.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  }
+]

@@ -1,0 +1,135 @@
+.search-panel-overlay {
+  position: fixed; left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(40,36,30,0.27); z-index: 5000;
+  display: none;
+}
+.search-panel-overlay.active { display: block; }
+
+.search-panel {
+  position: fixed; left: 50%; top: 18px; transform: translateX(-50%) scale(1.03);
+  width: 96vw; max-width: 470px; min-width: 220px;
+  background: #fff7f1; box-shadow: 0 10px 32px rgba(60,40,15,0.11);
+  border-radius: 18px;
+  padding: 36px 14px 18px 14px;
+  z-index: 5020; display: none;
+  animation: searchIn .24s;
+}
+@keyframes searchIn {
+  from { opacity: 0; transform: translateX(-50%) scale(0.97);}
+  to   { opacity: 1; transform: translateX(-50%) scale(1.03);}
+}
+.search-panel.active { display: block; }
+
+.search-close-btn {
+  position: absolute;
+  right: 18px;
+  top: 10px;
+  background: #f2e0c2; /* soft beige circle */
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  box-shadow: 0 2px 7px rgba(80,60,22,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.19s;
+}
+
+.search-close-btn:hover,
+.search-close-btn:focus {
+  background: #fbe8d2;
+}
+
+.search-close-btn img {
+  width: 21px;
+  height: 21px;
+  pointer-events: none;
+}
+
+.search-input-row {
+  display: flex; align-items: center;
+  position: relative; /* makes .search-clear-btn absolute to this */
+  margin-top: 18px;
+}
+
+#search-input {
+  flex: 1;
+  border: none;
+  background: #fff;
+  border-radius: 7px;
+  font-size: 1.1em;
+  padding: 11px 38px 11px 13px; /* right padding for the clear X */
+  outline: none;
+  box-shadow: 0 2px 8px rgba(80,60,22,0.07);
+  min-width: 0;
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 10px; /* inside input, adjust if needed */
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 22px; height: 22px;
+  opacity: 0.68;
+  padding: 0;
+  display: none; /* JS will toggle */
+  z-index: 3;
+}
+
+#search-input:not(:placeholder-shown) ~ .search-clear-btn,
+#search-input:focus ~ .search-clear-btn {
+  display: block;
+}
+
+.search-filters {
+  margin: 8px 0 6px 0;
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.search-filters .filter-chip {
+  background: #f2e0c2; color: #5a3822; border-radius: 7px;
+  padding: 5px 11px; font-size: 1em; cursor: pointer; border: none;
+  margin: 0; outline: none;
+  transition: background 0.16s;
+}
+.search-filters .filter-chip.selected { background: #f27329; color: #fff; }
+.search-suggestions { margin-top: 7px;}
+.suggestion-item {
+  padding: 8px 0; border-bottom: 1px solid #f5e6d7; cursor: pointer;
+  font-size: 1.06em; display: flex; align-items: center; gap: 10px;
+}
+.suggestion-item:last-child { border-bottom: none;}
+.suggestion-highlight { color: #f27329; font-weight: bold;}
+.search-recent, .search-popular {
+  margin-top: 11px; font-size: 0.97em; color: #8a6b43;
+}
+.search-recent-title { font-weight: bold; margin-bottom: 4px;}
+
+@media (max-width: 600px) {
+  .search-panel {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
+    transform: none;
+    padding: 52px 8px 18px 8px;  /* plenty of top padding for button + notch */
+  }
+  .search-close-btn {
+    right: 12px;
+    top: 16px;
+    width: 34px;
+    height: 34px;
+  }
+  .search-input-row {
+    margin-top: 0; /* remove extra spacing if present */
+  }
+}

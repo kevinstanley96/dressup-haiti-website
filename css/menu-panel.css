@@ -1,0 +1,138 @@
+.menu-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.07);
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(.77,0,.18,1);
+  z-index: 2000;
+  display: block;
+  padding: 35px 22px 18px 22px;
+}
+
+.menu-panel.open {
+  transform: translateX(0);
+}
+
+.close-btn {
+  position: absolute;
+  top: 35px;
+  left: 22px;
+  background: #eee;       /* Soft gray background */
+  border: none;
+  cursor: pointer;
+  padding: 7px;           /* Enough for a circle around the icon */
+  border-radius: 50%;     /* Makes it a perfect circle */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Soft shadow for depth */
+  transition: background 0.18s, box-shadow 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  background: #ddd;       /* Slightly darker on hover/focus */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.11);
+}
+
+.close-btn .icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 60px;
+  margin-bottom: 32px; /* <-- This creates nice space before socials */
+}
+
+.menu-options a {
+  font-family: 'League Spartan', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.menu-options a:hover {
+  color: #F27329; /* Example highlight color */
+}
+
+.menu-socials {
+  display: flex;
+  justify-content: center;
+  gap: 2em; /* Make the icons roomy and easy to tap */
+  margin-bottom: 16px;
+}
+
+.menu-socials a .icon {
+  width: 34px;
+  height: 34px;
+  transition: transform 0.19s, box-shadow 0.16s, filter 0.18s;
+  filter: grayscale(0%) brightness(1.12) drop-shadow(0 2px 8px #F7F2EA);
+  opacity: 0.93;
+   background: #fff;
+  border-radius: 20%;
+  padding: 1.5px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+}
+
+.menu-socials a:hover .icon {
+  opacity: 1;
+  transform: scale(1.13) rotate(-8deg);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  background: rgba(25, 25, 25, 0.45); /* Slightly dim */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  z-index: 1500; /* Lower than menu-panel, higher than rest */
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-socials a[aria-label="Instagram"]:hover .icon {
+  filter: drop-shadow(0 0 12px #ee2a7b) brightness(1.12);
+  transform: scale(1.17) rotate(-7deg);
+}
+.menu-socials a[aria-label="Facebook"]:hover .icon {
+  filter: drop-shadow(0 0 12px #1877f3) brightness(1.12);
+  transform: scale(1.17) rotate(-7deg);
+}
+.menu-socials a[aria-label="TikTok"]:hover .icon {
+  filter: drop-shadow(0 0 12px #25f4ee) brightness(1.12);
+  transform: scale(1.17) rotate(-7deg);
+}
+.menu-socials a[aria-label="WhatsApp"]:hover .icon {
+  filter: drop-shadow(0 0 12px #25d366) brightness(1.12);
+  transform: scale(1.17) rotate(-7deg);
+}
+
+@media (max-width: 600px) {
+  .menu-options {
+    margin-bottom: 22px;
+  }
+  .menu-socials {
+    gap: 1.2em;
+    margin-bottom: 10px;
+  }
+}

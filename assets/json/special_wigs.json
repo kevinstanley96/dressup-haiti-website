@@ -1,0 +1,62 @@
+[
+  {
+    "name":"10\" bang closure 4x2 straight",
+    "price":60.0,
+    "oldPrice":70.0,
+    "img":"images\/wig6.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name":"10\" lace frontal straight",
+    "price":70.0,
+    "oldPrice":80.0,
+    "img":"images\/wig7.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name":"10\" closure 4x4 body wave",
+    "price":65.0,
+    "oldPrice":75.0,
+    "img":"images\/wig8.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name":"Cataleya closure 4x4",
+    "price":75.0,
+    "oldPrice":85.0,
+    "img":"images\/wig9.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name":"12\" lace frontal straight",
+    "price":75.0,
+    "oldPrice":85.0,
+    "img":"images\/wig10.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  }
+]

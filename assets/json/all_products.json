@@ -1,0 +1,152 @@
+[
+  {
+    "id":"wig_1_8\"",
+    "length":"8\"",
+    "category":"lace frontal",
+    "hair_type":"straight",
+    "price":65,
+    "old_price":75,
+    "img":"images\/wig.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "id":"wig_2_10\"",
+    "length":"10\"",
+    "category":"lace frontal",
+    "hair_type":"jerry curly",
+    "price":80,
+    "old_price":90,
+    "img":"images\/wig2.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "id":"wig_3_10\"",
+    "length":"10\"",
+    "category":"closure 4x4",
+    "hair_type":"jerry curly",
+    "price":75,
+    "old_price":85,
+    "img":"images\/wig3.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "id":"wig_4_10\"",
+    "length":"10\"",
+    "category":"headband",
+    "hair_type":"jerry curly",
+    "price":65,
+    "old_price":75,
+    "img":"images\/wig4.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "id":"wig_5_10\"",
+    "length":"10\"",
+    "category":"lace frontal",
+    "hair_type":"straight",
+    "price":70,
+    "old_price":80,
+    "img":"images\/wig5.jpg",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "id":"wig_6_10\"",
+    "length":"10\"",
+    "category":"bang closure 4x2",
+    "hair_type":"straight",
+    "price":60,
+    "old_price":70,
+    "img":"images\/wig6.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "id":"wig_7_10\"",
+    "length":"10\"",
+    "category":"lace frontal",
+    "hair_type":"straight",
+    "price":70,
+    "old_price":80,
+    "img":"images\/wig7.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "id":"wig_8_10\"",
+    "length":"10\"",
+    "category":"closure 4x4",
+    "hair_type":"body wave",
+    "price":65,
+    "old_price":75,
+    "img":"images\/wig8.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "id":"wig_9_Cataleya",
+    "length":"Cataleya",
+    "category":"closure 4x4",
+    "hair_type":null,
+    "price":75,
+    "old_price":85,
+    "img":"images\/wig9.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "id":"wig_10_12\"",
+    "length":"12\"",
+    "category":"lace frontal",
+    "hair_type":"straight",
+    "price":75,
+    "old_price":85,
+    "img":"images\/wig10.JPEG",
+    "tags":[
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  }
+]

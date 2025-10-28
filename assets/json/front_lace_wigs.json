@@ -1,0 +1,64 @@
+[
+  {
+    "name": "14\" lace frontal body wave",
+    "price": 85,
+    "oldPrice": 105,
+    "img": "assets/images/body-wave/wig1.JPEG",
+    "tags": [
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name": "10\" lace frontal body wave",
+    "price": 70,
+    "oldPrice": 90,
+    "img": "assets/images/body-wave/wig2.JPEG",
+    "tags": [
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name": "16\" lace frontal body wave",
+    "price": 95,
+    "oldPrice": 115,
+    "img": "assets/images/body-wave/wig3.JPEG",
+    "tags": [
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable"
+    ]
+  },
+  {
+    "name": "10\" lace frontal body wave",
+    "price": 80,
+    "oldPrice": 100,
+    "img": "assets/images/body-wave/wig4.JPEG",
+    "tags": [
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable",
+      "200% density"
+    ]
+  },
+  {
+    "name": "16\" lace frontal body wave",
+    "price": 120,
+    "oldPrice": 140,
+    "img": "assets/images/body-wave/wig5.JPEG",
+    "tags": [
+      "natural look",
+      "100% human hair",
+      "glueless",
+      "reusable",
+      "200% density"
+    ]
+  }
+]

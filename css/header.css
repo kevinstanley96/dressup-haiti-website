@@ -1,0 +1,124 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px; /* Adjust as needed */
+  background: #fff; /* Or your preferred bg color */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  width: 28px; /* Adjust if needed */
+  height: 28px;
+}
+
+.site-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 14px; /* Between 10-16px, set as 14px */
+  letter-spacing: 1px;
+  color: #000; /* Your preferred color */
+  text-decoration: none;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px; /* Space between right-side icons */
+}
+.header-right > * {
+  margin-left: 8px;
+}
+.header-right > *:first-child {
+  margin-left: 0;
+}
+
+.header-right .icon:first-child {
+  margin-left: 0;
+}
+
+@media (max-width: 600px) {
+  .main-header {
+    padding: 0 0 0 0.5px;
+    min-height: 52px;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .menu-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .site-name {
+    font-size: 1rem;
+    margin-left: 10px;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header-right .icon,
+  .menu-icon {
+    padding: 3px;
+    box-sizing: content-box;
+  }
+}
+
+.cart-header-btn {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.cart-badge {
+  position: absolute;
+  right: -3px;
+  bottom: -4px;
+  background: #f31010;
+  color: #fff;
+  font-size: 0.78em;
+  width: 16px;         /* fixed width */
+  height: 16px;        /* fixed height */
+  border-radius: 50%;  /* perfectly round */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.09);
+  border: 2px solid #fff;
+  z-index: 1;
+  transition: background 0.2s;
+  padding: 0;          /* no padding! */
+}
+
+.cart-badge:empty {
+  display: none;
+}
+
+html, body {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  transform: none !important;
+}
